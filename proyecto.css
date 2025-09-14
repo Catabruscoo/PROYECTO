@@ -1,0 +1,192 @@
+/* ---------------------------------------------------
+   ESTILOS GENERALES
+   --------------------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #fdf6e3; 
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  color: #60A5FA; 
+}
+
+/* ---------------------------------------------------
+   ENCABEZADO (Header)
+   --------------------------------------------------- */
+header {
+  background-image: url("./pergamino\ 2.jpg");
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 3rem 1rem;
+}
+
+header h1 {
+  font-size: 2rem;
+  margin: 0;
+  color: #1D4ED8; 
+  text-shadow: 1px 1px 2px #EFF6FF; 
+}
+
+.frase-inicial {
+  font-style: italic;
+  color: #1D4ED8;
+  margin-top: 0.5rem;
+  text-shadow: 1px 1px 2px #EFF6FF; 
+}
+
+/* ---------------------------------------------------
+   NAVEGACIÓN
+   --------------------------------------------------- */
+nav {
+  background-color:  #60A5FA; 
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  color: #EFF6FF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: rgb(101, 193, 255);
+}
+
+/* ---------------------------------------------------
+   SECCIONES GENERALES
+   --------------------------------------------------- */
+section {
+  padding: 2rem;
+  max-width: 1000px;
+  margin: auto;
+}
+
+section h2 {
+  color: #1D4ED8;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* ---------------------------------------------------
+   SECCIÓN VIRTUDES
+   --------------------------------------------------- */
+#virtudes {
+  background-color: rgba(139, 223, 233, 0.5);
+  border-radius: 8px;
+  padding: 1.5rem;
+}
+
+/* ---------------------------------------------------
+   TABLA MILAGRO
+   --------------------------------------------------- */
+#milagro table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #EFF6FF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#milagro th,
+#milagro td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #c2e6eb;
+  
+}
+
+#milagro th {
+  background-color: #575bd9; 
+  background-color: #EFF6FF;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#beato tr:hover {
+  background-color: #e3c9a8;
+  transition: background-color 0.3s ease;
+}
+
+/* ---------------------------------------------------
+   TABLA FECHA BEATO
+   --------------------------------------------------- */
+#beato table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  background-color: #EFF6FF;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+#beato th,
+#beato td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #c2e6eb;
+}
+
+#beato th {
+  background-color: #575bd9; 
+  background-color: #EFF6FF;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+#beato tr:hover {
+  background-color: #e3c9a8;
+  transition: background-color 0.3s ease;
+}
+
+/*ORACIÓN*/
+#oracion { 
+background-color: #EFF6FF;
+color: #575bd9;
+}
+
+/* ---------------------------------------------------
+   COLLAGE
+   --------------------------------------------------- */
+#collage .contenedor-collage {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta-obra img {
+  width: 100%;
+  height: auto;
+}
+
+
+
+/* ---------------------------------------------------
+   PIE DE PÁGINA
+   --------------------------------------------------- */
+footer {
+  background-color:  #60A5FA; 
+  color: #EFF6FF;
+  text-align: center;
+  padding: 1rem;
+}
+
+footer a {
+  color: #EFF6FF;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  margin: 0 0.5rem; 
+  font-size: 1.8rem; 
+  display: inline-block; 
+}
+
+footer a:hover {
+  color: rgb(101, 193, 255);
+}

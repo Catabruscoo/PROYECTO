@@ -155,14 +155,15 @@ color: #000000;
    COLLAGE
    --------------------------------------------------- */
 #collage .contenedor-collage {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
+  display: flex; /* Coloca las imágenes en línea */
+  justify-content: center; /* Centra horizontalmente */
+  gap: 15px; /* Espacio entre las imágenes */
 }
 
-.tarjeta-obra img {
-  width: 100%;
-  height: auto;
+.contenedor-collage img {
+  width: 30%; /* Ajusta cada imagen al 30% del contenedor */
+  height: auto; /* Mantiene la proporción */
+  max-width: 200px; /* Opcional: limita el ancho máximo */
 }
 
 

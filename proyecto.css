@@ -161,7 +161,7 @@ color: #000000;
 }
 
 .contenedor-collage img {
-  width: auto; /* Ajusta cada imagen al 30% del contenedor */
+  width: 40%; /* Ajusta cada imagen al 40% del contenedor */
   height: auto; /* Mantiene la proporción */
   max-width: 200px; /* Opcional: limita el ancho máximo */
 }

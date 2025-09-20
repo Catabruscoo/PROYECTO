@@ -161,12 +161,11 @@ color: #000000;
 }
 
 .contenedor-collage img {
-  width: 300px;          /* Ancho de la imagen */
+  width: 50%;          /* Ancho de la imagen */
     height: auto;          /* Altura se ajustará automáticamente */
     margin: 10px;          /* Margen para separar las imágenes */
     object-fit: cover;     /* Asegura que la imagen llene su espacio sin distorsionarse */
-  max-width: 200px; /* Opcional: limita el ancho máximo */
-}
+  }
 
 /* ---------------------------------------------------
    PIE DE PÁGINA

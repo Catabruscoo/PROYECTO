@@ -71,9 +71,9 @@
                 <h2>Collage de imágenes</h2>
                 <div class="contenedor-collage">
                     <div class="contenedor-collage img">
-        <img src="./pedro 1.jpg" alt="Pedro 1" width="40%" height="50%">
-        <img src="./pedro 2.jpg" alt="Pedro 2" width="50%" height="40%"> 
-        <img src="./pedro 3.jpg" alt="Pedro 3" width="40%" height="30%">
+        <img src="./pedro 1.jpg" alt="Pedro 1">
+        <img src="./pedro 2.jpg" alt="Pedro 2"> 
+        <img src="./pedro 3.jpg" alt="Pedro 3">
     </div>
         </div>
             </section>

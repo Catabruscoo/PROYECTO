@@ -77,6 +77,171 @@
     </div>
         </div>
             </section>
+            <section>
+                <style>
+    .modal {
+     display: none; /* oculto hasta abrir */
+     position: fixed;
+     left: 0; top: 0;
+     width: 100%; height: 100%;
+     background-color: rgba(0, 0, 0, 0.299);
+     z-index: 1000;
+    }
+    .modal-contenido {
+     background: white;
+     margin: 5% auto;
+     padding: 20px;
+     border-radius: 10px;
+     max-width: 600px;
+     max-height: 80vh;
+     overflow-y: auto;
+    }
+.trivia1 {
+color:#1D4ED8; 
+}
+.boton {
+background-color: #376cff;
+color: white;
+}
+    .cerrar { float: right; cursor: pointer; font-size: 24px; }
+    </style>
+</head>
+<body>
+    <!-- SECCIÓN PARA JUGAR TRIVIA -->
+<section id="jugar-trivia">
+<h2 class="trivia1">¿Te animas a poner a prueba tus conocimientos?</h2>
+<button id="abrirTrivia" class="boton">Comenzar Trivia</button>
+</section>
+<!-- MODAL -->
+<div id="modalTrivia" class="modal">
+ <div class="modal-contenido">
+ <span class="cerrar">&times;</span>
+ <!-- Aquí irá el formulario y resultados -->
+ <h2 class="trivia1">Trivia sobre el Beato Pedro Casani</h2>
+<form id="formTrivia">
+ <p><strong>1.</strong> ¿Dónde nació el Beato Pedro Casani?</p>
+ <label><input type="radio" name="p1" value="Portugal"> Portugal</label><br>
+ <label><input type="radio" name="p1" value="España"> España</label><br>
+ <label><input type="radio" name="p1" value="Italia"> Italia</label><br><br>
+
+ <p><strong>2.</strong> ¿En qué año nació?</p>
+ <label><input type="radio" name="p2" value="1570"> 1570</label><br>
+ <label><input type="radio" name="p2" value="1569"> 1569</label><br>
+ <label><input type="radio" name="p2" value="1650"> 1650</label><br><br>
+
+ <p><strong>3.</strong> ¿A qué orden religiosa dedicó su vida el Beato Pedro Casani, siendo un estrecho colaborador de su fundador?</p>
+ <label><input type="radio" name="p3" value="Dominicos"> La Orden de Predicadores</label><br>
+ <label><input type="radio" name="p3" value="Escolapios"> La Orden de los Clérigos Regulares Pobres de la Madre de Dios de las Escuelas Pías</label><br>
+ <label><input type="radio" name="p3" value="Agustinos"> La Orden de San Agustín</label><br><br>
+
+ <p><strong>4.</strong> ¿Cuál fue el principal papel del Beato Pedro Casani en relación con las Escuelas Pías?</p>
+ <label><input type="radio" name="p4" value="Fundador"> Promotor y fundador de las Escuelas Pías en España</label><br>
+ <label><input type="radio" name="p4" value="Historiador"> Primer historiador oficial de la vida de San José de Calasanz</label><br>
+ <label><input type="radio" name="p4" value="General"> Ser el Superior General de la Orden después de San José de Calasanz</label><br><br>
+
+ <p><strong>5.</strong> ¿Qué día se celebra su festividad?</p>
+ <label><input type="radio" name="p5" value="25 de agosto"> 25 de agosto</label><br>
+ <label><input type="radio" name="p5" value="17 de octubre"> 17 de octubre</label><br>
+ <label><input type="radio" name="p5" value="15 de mayo"> 15 de mayo</label><br><br>
+
+
+ <button type="submit">Enviar respuestas</button>
+</form>
+<div id="resultado"></div> 
+
+ </div>
+</div>
+<!-- SCRIPT básico para abrir/cerrar el MODAL-->
+<script>
+    const modal = document.getElementById("modalTrivia");
+    const btnAbrir = document.getElementById("abrirTrivia");
+    const btnCerrar = document.querySelector(".cerrar");
+    btnAbrir.onclick = () => { modal.style.display = "block"; };
+    btnCerrar.onclick = () => { modal.style.display = "none"; };
+    window.onclick = (e) => { if (e.target === modal) modal.style.display = "none"; };
+
+    document.getElementById("formTrivia").addEventListener("submit", function(e) {
+ e.preventDefault();
+ // Variable para puntaje
+ let puntaje = 0;
+ let salida = "";
+ // Capturamos la respuesta de la PREGUNTA 1
+ let r1 = document.querySelector('input[name="p1"]:checked');
+ // Validamos
+ if (r1) {
+ if (r1.value === "Italia") {
+ puntaje++;
+ salida += "<p class='correcta'>1.Correcta</p>";
+ } else {
+ salida += "<p class='incorrecta'>1.Incorrecta. Correcta: Italia</p>";
+ }
+ } else {
+ salida += "<p class='incorrecta'>1.No respondida. Correcta: Italia</p>";
+ }
+
+ // Capturamos la respuesta de la PREGUNTA 2
+ let r2 = document.querySelector('input[name="p2"]:checked');
+ // Validamos
+ if (r2) {
+ if (r2.value === "1570") {
+ puntaje++;
+ salida += "<p class='correcta'>2.Correcta</p>";
+ } else {
+ salida += "<p class='incorrecta'>2.Incorrecta. Correcta: 1570</p>";
+ }
+ } else {
+ salida += "<p class='incorrecta'>2.No respondida. Correcta: 1570</p>";
+ }
+
+ // Capturamos la respuesta de la PREGUNTA 3
+ let r3 = document.querySelector('input[name="p3"]:checked');
+ // Validamos
+ if (r3) {
+ if (r3.value === "Escolapios") {
+ puntaje++;
+ salida += "<p class='correcta'>3.Correcta</p>";
+ } else {
+ salida += "<p class='incorrecta'>3.Incorrecta. Correcta: La Orden de los Clérigos Regulares Pobres de la Madre de Dios de las Escuelas Pías</p>";
+ }
+ } else {
+ salida += "<p class='incorrecta'>3.No respondida. Correcta: La Orden de los Clérigos Regulares Pobres de la Madre de Dios de las Escuelas Pías</p>";
+ }
+
+ // Capturamos la respuesta de la PREGUNTA 4
+ let r4 = document.querySelector('input[name="p4"]:checked');
+ // Validamos
+ if (r4) {
+ if (r4.value === "Fundador") {
+ puntaje++;
+ salida += "<p class='correcta'>4.Correcta</p>";
+ } else {
+ salida += "<p class='incorrecta'>4.Incorrecta. Correcta: Promotor y fundador de las Escuelas Pías en España</p>";
+ }
+ } else {
+ salida += "<p class='incorrecta'>4.No respondida. Correcta: Promotor y fundador de las Escuelas Pías en España</p>";
+ }
+
+ // Capturamos la respuesta de la PREGUNTA 5
+ let r5 = document.querySelector('input[name="p5"]:checked');
+ // Validamos
+ if (r5) {
+ if (r5.value === "17 de octubre") {
+ puntaje++;
+ salida += "<p class='correcta'>5.Correcta</p>";
+ } else {
+ salida += "<p class='incorrecta'>5.Incorrecta. Correcta: 17 de octubre</p>";
+ }
+ } else {
+ salida += "<p class='incorrecta'>5.No respondida. Correcta: 17 de octubre</p>";
+ }
+
+ // Mostramos el resultado dentro del modal, debajo del formulario
+ salida += `<h4>Puntaje final: ${puntaje} de 5</h4>`;
+ document.getElementById("resultado").innerHTML = salida;
+});
+
+    </script> 
+            </section>
             </main>
 
             <footer>
